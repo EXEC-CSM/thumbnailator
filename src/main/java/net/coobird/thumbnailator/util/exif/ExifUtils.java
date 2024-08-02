@@ -68,7 +68,7 @@ public final class ExifUtils {
 	 */
 	public static Orientation getExifOrientation(ImageReader reader, int imageIndex) throws IOException {
 		IIOMetadata metadata = reader.getImageMetadata(imageIndex);
-		Node rootNode = metadata.getAsTree("javax_imageio_jpeg_image_1.0");
+		Node rootNode = metadata.getAsTree(metadata.getNativeMetadataFormatName());
 
 		NodeList childNodes = rootNode.getChildNodes();
 
